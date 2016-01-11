@@ -30,7 +30,8 @@
     </div>
   <?php endif; ?>
 
-  <div class="row">
+  <div class="top-bayside top-region">
+  <!--<div class="row">--->
     <div class="large-3 columns left-region">
       <?php print $content['left']; ?>
     </div>
@@ -43,6 +44,7 @@
     <div class="large-3 columns right-region">
       <?php print $content['right']; ?>
     </div>
+  <!--</div>--->
   </div>
 
   <?php if ($content['bottom']): ?>

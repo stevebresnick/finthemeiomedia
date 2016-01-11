@@ -13,10 +13,10 @@ function fin_iomedia_stp_layout_panels_layouts() {
     'regions' => array(
       'top' => t('Top'),
       'secondary' => t('secondary'),
-      'left' => t('Left'),
-      'center-left' => t('Center Left'),
-      'center-right' => t('Center Right'),
-      'right' => t('Right'),
+      'left' => t('First Block'),
+      'center-left' => t('Second Block'),
+      'center-right' => t('Third Block'),
+      'right' => t('Fourth Block'),
       'bottom' => t('Bottom'),
     ),
   );
