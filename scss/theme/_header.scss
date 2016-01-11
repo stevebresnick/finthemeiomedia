@@ -1,0 +1,117 @@
+.metanav {
+	background:$primary-alt-color;
+	min-height:2em;
+	font-family:$font-header;
+
+	.block-dfs-fin-user {
+		position: relative;
+		//hide the contextual link for the user because it gets in the way of logout and its not necessary for our demo.
+		.contextual-links-wrapper {
+			display: none;
+		}
+		margin-top:10px;
+		text-align: right;
+		line-height: rem-calc(40px);
+		.login-dropdown-button {
+			position:relative;
+			color:$white;
+			&:before {
+				background-image: url('../images/user.svg');
+				background-size:20px;
+				width:20px;
+				height:20px;
+				content:"";
+				position:absolute;
+				left:-25px;
+				top:0;
+			}
+
+			&:hover {
+				color:$secondary-color;
+			}
+		}
+
+		.logout-button {
+			color:$white;
+			&:hover {
+				color:$secondary-color;
+			}
+		}
+
+        .janrain-header {
+          text-align: center;
+        }
+
+        #janrainView {
+          // Icons don't need text under them
+          .janrain-provider-icon-bg {
+            span {
+              color: transparent;
+            }
+          }
+          // Janrain header can't fit into a space this small
+          .janrainHeader {
+            display: none;
+          }
+          // Hack to center icons
+          #janrainProviderPages {
+            padding-left: rem-calc(35px);
+          }
+        }
+
+	}
+
+	.metanav-tabs {
+		line-height: rem-calc(45px);
+		li {
+			float:left;
+			list-style: none;
+			text-align: center;
+
+			a {
+				color:$white;
+			}
+		}
+		.active {
+			background:$primary-color;
+		}
+	}
+}
+
+.views-field-field-ins-hero-image {
+	img {
+		width:100%;
+	}
+}
+
+.top-bar-wrapper {
+	background:$primary-color;
+	padding:rem-calc(10px);
+	.top-bar {
+		background:$primary-color;
+	}
+}
+
+.contain-to-grid {
+	background:$primary-color;
+	padding:10px;
+}
+
+.fixed {
+	z-index:105;
+}
+
+.fixed .logo {
+ 	@include transition(all 0.8s);
+	height:rem-calc(35px);
+}
+
+.logo {
+	height:rem-calc(45px);
+	@include transition(all 0.8s);
+	margin-top:rem-calc(5px);
+	@media #{$small-only} {
+		max-height:rem-calc(35px) 
+	}
+
+}

@@ -1,0 +1,1110 @@
+blockquote {
+	p{
+		font-size:$h3-font-size;
+		font-style:italic;
+		color:#000;
+	}
+}
+
+h4 {
+	font-family:$font-header;
+	color:$blue;
+	margin-bottom:10px;
+}
+
+.hero-image {
+	.hero-text {
+		h1 {
+			@extend %hero-text-h1;
+		}
+
+		h2 {
+			@extend %hero-text-h2;
+		}
+
+		a.button {
+			background: $alert-color;
+			&:hover {
+				background: $alert-button-bg-hover;
+			}
+			@media #{$small-only} {
+				@include button($button-tny);
+			}
+		}
+	}
+
+}
+
+.hero {
+	.field-name-field-hero-headline-1 {
+		@extend %hero-text-h2;
+		color: $primary-alt-color;
+	}
+	.field-name-field-hero-headline-2 {
+		@extend %hero-text-h1;
+		color: $primary-alt-color;
+	}
+	a.button {
+		background: $alert-color;
+		&:hover {
+			background: $alert-button-bg-hover;
+		}
+		@media #{$small-only} {
+			@include button($button-tny);
+		}
+	}
+}
+
+.view-product-hero {
+  position:relative;
+}
+
+.l-main {
+	ul {
+		li {
+			color:#000;
+			font-weight:bold;
+			a {
+				margin-bottom: 1px;
+			}
+		}
+	}
+}
+
+//temporarly hide this until the meta nav is build
+.hero-image-2 {
+	display:none;
+}
+
+.global-footer-wrapper {
+	background:$primary-alt-color;
+	@extend %padding-rhythm-space;
+	.l-global-footer {
+		color:$white;
+		h2 {
+			/* Extend our header-text mixin to make block titles uppercase and sans-serif */
+			@extend %header-text;
+			/* Override default mixin color */
+			color:$white;
+			/* Change the font size to match h3 size */
+			font-size: 1.25rem;
+			// Add a small border below the headers
+			&:after {
+				@extend %rhythm-space;
+				border-bottom: rem-calc(3px) solid $white;
+				display: block;
+				content: "";
+				width: rem-calc(150px);
+			}
+		}
+		li,p {
+			margin-bottom: rem-calc(20px);
+		}
+	}
+}
+
+.footer-wrapper {
+	background:$seafoam;
+}
+
+.our-history-wrapper {
+	@extend %padding-rhythm-space;
+	@extend %rhythm-space;
+
+	h1 {
+		position:relative;
+		border-bottom:2px solid #bebbbb;
+		padding-bottom:10px;
+	}
+
+	/* For small devices, hide the logo */
+	@media #{$small-only} {
+		img {
+			display: none;
+		}
+	}
+}
+//locator
+
+.section-locations .field-name-field-raw-html {
+	img {
+		width:100%;
+	}
+}
+
+.pane-location-finder-panel-pane-1 {
+	.view-empty h4 {
+		text-align: center;
+		@extend %rhythm-space;
+	}
+
+	.location-phone-number {
+		text-align: right;
+		img {
+			width:40px;
+			text-align: right;
+			float:right;
+			padding-left:5px;
+		}
+	}
+
+	.views-field-field-geofield-distance  {
+		font-weight:bold;
+		font-style: italic;
+		font-family: $font-header;
+		color:$primary-color;
+	}
+
+	.views-row {
+		@extend %rhythm-space;
+		border-bottom:1px dashed $blue;
+	}
+
+	.views-exposed-widgets {
+		margin-bottom:0px;
+	}
+
+	.locate-distance {
+		font-weight:bold;
+		font-size:rem-calc(20px);
+		border-bottom:1px solid $charcoal;
+		margin:20px;
+		@media #{$small-only} {
+			font-size: inherit;
+		}
+		a {
+			float:right;
+			@media #{$small-only} {
+				float:none;
+			}
+			color: $terciary-color;
+			font-weight: normal;
+			&:hover {
+				color: $secondary-color;
+			}
+		}
+	}
+
+	.node-location {
+		@extend %rhythm-space;
+	}
+
+	.street-block, .locality-block, .country {
+		float:left;
+		display:inline;
+		padding-right:5px;
+		font-size:rem-calc(18px);
+		color:$blue;
+		font-family: $font-header;
+	}
+
+	.location-email-address {
+		text-align: right;
+		img {
+			width:40px;
+			text-align: right;
+			float:right;
+			padding-left:5px;
+		}
+	}
+	.text-format-wrapper {
+		float:left;
+		h4 {
+			color:$white;
+		}
+		margin:20px;
+		margin-bottom:0px;
+	}
+	#views-exposed-form-location-finder-panel-pane-1 {
+		margin-top:rem-calc(-60px);
+		border-radius:5px;
+		background:$secondary-color;
+		@extend %padding-rhythm-space;
+		padding: rem-calc(10px);
+
+		.views-widget-filter-field_geofield_distance {
+			width:40%;
+			@media #{$small-only} {
+				width: 100%;
+			}
+		}
+		.views-submit-button {
+			margin:0;
+			position: relative;
+
+			input {
+				margin-top:0;
+				max-height: 30px;
+				max-width:30px;
+				border-radius:50%;
+				position:relative;
+
+				&:hover {
+					background: url(../images/red-dot.png);
+					background-size:30px 30px;
+					background-position: center center;
+					@include transition(all .5s);
+
+				}
+
+				&.progress-disabled {
+					display:none;
+					@include transition(all .5s);
+				}
+			}
+
+
+			.ajax-progress-throbber{
+				background:url(../images/geothrobber.gif);
+				background-size:30px 30px;
+				position:absolute;
+				left:0px;
+				top:8px;
+				width:30px;
+				height:30px;
+			}
+		}
+	}
+}
+
+
+.copyright-wrapper {
+	@extend %padding-rhythm-space;
+}
+
+.copyright {
+	@extend %header-text;
+	text-align: center;
+}
+
+.product-hero-text {
+	h2.get-quote-text {
+		color:$white;
+		background:rgba(0,0,0,.3);
+		padding:rem-calc(10px);
+	}
+	.button {
+		background:$button-alt-color;
+
+		&:hover {
+			background:$alert-button-bg-hover;
+		}
+	}
+}
+
+.view-display-id-product_hero_pane.product-slideshow {
+	.product-hero-text {
+		@media #{$small-only} {
+			display: none;
+		}
+	}
+}
+
+.node-type-insurance-product {
+	.pane-node-title  {
+		@extend %rhythm-space;
+		float:left;
+	}
+	.pane-node-field-subtitle {
+		.field-name-field-subtitle {
+			padding-top:rem-calc(20px);
+			float:left;
+			@extend %horizontal-spacer;
+			@extend %rhythm-space;
+			font-style:italic;
+		}
+	}
+
+	.views-field-field-hero-text {
+		.product-hero-text {
+			width:rem-calc(500px);
+		}
+	}
+}
+
+.field-name-field-ins-image {
+	.field-label {
+		display:none;
+	}
+	.field-items{
+		text-align: center;
+		float:none;
+	}
+}
+
+.footer {
+	a {
+		color:$white;
+	}
+}
+
+.bottom-wrapper {
+	background:url(../images/stripe-bg.png) top center repeat-x $light-green;
+	padding-top:45px;
+	.pane-product-bundle-product-bundle-pane {
+		.view-header {
+			@extend %rhythm-space;
+			h4 {
+				color:#5282a5;
+			}
+		}
+		h2 {
+			@extend %rhythm-space;
+			text-align: center;
+			padding-bottom:rem-calc(10px);
+			font-size:$h1-font-size;
+			text-transform: uppercase;
+			&:after {
+				border-bottom: rem-calc(3px) solid #bebbbb;
+				display: block;
+				content: "";
+				width: rem-calc(250px);
+				margin:0 auto;
+				margin-top:rem-calc(15px);
+			}
+		}
+		.cta-wrapper {
+			text-align: center;
+			@extend %rhythm-space;
+
+		}
+		li {
+
+			list-style: none;
+			.views-field-field-bundle-text {
+				font-weight:normal;
+				color:$charcoal;
+				font-size:rem-calc(13px);
+				text-align:center;
+			}
+
+			.views-field-title {
+				text-align: center;
+				@extend %rhythm-space;
+
+			}
+
+			.views-field-field-ins-icon {
+				text-align: center;
+				img {
+					border:2px solid $seafoam;
+					border-radius:50%;
+					padding:10px;
+					width:80px;
+					height:80px;
+				}
+			}
+		}
+	}
+}
+
+.node-type-insurance-product .view-quotes {
+	text-align:center;
+	.quote-text {
+		@extend %rhythm-space;
+		padding-top: rem-calc(50px);
+		background: url('../images/open-quote.png') no-repeat top center;
+		margin-left:auto;
+		margin-right:auto;
+		max-width:75%;
+	}
+	.quote-author {
+		color:$black;
+		font-family: $font-header;
+	}
+}
+
+//basic page styling 
+
+.node-type-page {
+	.pane-node-field-image {
+		img {
+			width:100%;
+		}
+	}
+}
+
+/* Product list navigation styles */
+
+.product-listing-nav-region {
+  text-align: center;
+}
+
+.product-listing-nav {
+  // Magellan doesn't work great on mobile, and too much of the vertical space is alreay taken up by the navbar
+  @media #{$small-only} {
+    display: none;
+  }
+  // Center the product list nav
+  .sub-nav {
+    margin: 0 auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  // Float items next to eachother without comprimising horizontal centering
+  .view-content {
+    display: inline-block;
+    .views-row {
+      display: inline-block;
+    }
+  }
+  // Theme each nav item
+  .product-nav-item {
+    min-width: rem-calc(100px);
+    display: block;
+    // Override the margins applied to dd elements in foundation
+    .product-nav-icon {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: rem-calc(10px);
+      width:30px;
+      height:30px;
+    }
+    .product-nav-title {
+      @extend %header-text;
+      color: $border-color;
+    }
+  }
+  // Theme magellan active styles
+  dd a {
+    border-bottom: rem-calc(2px) solid transparent;
+    margin: 0;
+    padding: 0;
+  }
+  // Foundation assumes a lot about magellan/dd themes, so we need to do a few resets
+  dd.active a, a:hover, dd.active a:hover {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: rem-calc(2px) solid $secondary-color;
+    border-radius: 0%;
+    .product-nav-title {
+      color: $secondary-color;
+    }
+  }
+}
+
+/* Product list styles */
+
+.product-list {
+  .row {
+    margin-bottom: rem-calc(50px);
+  }
+  // Every other row, change the position of the quotes
+  .views-row-even {
+    .product-list-sidebar {
+      float: right;
+    }
+  }
+  // Add an offset to the short title anchor to account for sticky nav(s)
+  .views-field-field-short-title a {
+    position: relative;
+  }
+  // Center quotes/product image
+  .product-list-sidebar {
+    text-align: center;
+    // Give the quote some breathing room on mobile devices
+    @media #{$small-only} {
+      @extend %rhythm-space;
+    }
+    .views-field-body-1 {
+      @extend %rhythm-space;
+      padding-top: rem-calc(50px);
+      background: url('../images/open-quote.png') no-repeat top center;
+      // On media devices, put the quote to the left side of the quote and align the text to that quote
+      @media #{$small-only}, #{$medium-only} {
+        padding-top: 0;
+        padding-left: rem-calc(50px);
+        background-position: left top;
+        text-align: left;
+        @media #{$medium-only} {
+          background-position: top left;
+        }
+      }
+    }
+    .views-field-field-quote-author {
+      @media #{$medium-only} {
+        text-align: right;
+      }
+    }
+    .views-field-field-ins-image {
+      @media #{$medium-only} {
+        float: right;
+      }
+    }
+    .quote-author {
+      font-family: $font-header;
+    }
+  }
+  .product-list-sidebar-right {
+    .views-field-title a {
+      @extend %header-text;
+      border-bottom: rem-calc(2px) solid $border-color;
+      padding-bottom: rem-calc(30px);
+      // On mobile devices, make the header text a bit bigger
+      @media #{$small-only} {
+        font-size: rem-calc(25px);
+      }
+    }
+    .views-field-field-subtitle h3 {
+      @extend %rhythm-space;
+      padding-top: rem-calc(30px);
+      color: $terciary-color;
+    }
+    // Override some blockquote styles to match IA
+    .views-field-body {
+      blockquote {
+        margin-left: rem-calc(50px);
+        border-left: rem-calc(3px) solid $primary-color;
+        p {
+          color: $black;
+          font-style: italic;
+        }
+      }
+    }
+    // Theme the "Learn More" link
+    .views-field-view-node {
+      @extend %header-text;
+      a:hover {
+        border-bottom: rem-calc(2px) solid $alert-color;
+      }
+    }
+  }
+}
+
+/* Goals styles */
+
+.all-goals-pane {
+  // Add some padding to the secondary features region (the region where articles are)
+  .secondary-features-region {
+    margin-bottom: rem-calc(50px);
+  }
+  // Styles for top/hero section of Goal
+  .goal-hero {
+    position: relative;
+    .views-field-field-image {
+      // Add a gradient behind the hero text
+      &:before {
+        @extend %hero-img-gradient;
+        @include background-image(linear-gradient(right, rgba(250, 250, 250, .8) 45%, rgba(250, 250, 250, 0.5) 50%, rgba(250, 250, 250, .1) 55%, rgba(250, 250, 250, 0) 100%));
+      }
+      img {
+        width: 100%; // Make sure the image fills the width of the pane
+      }
+    }
+    // Position the hero text over the hero/banner image
+    .views-field-title {
+      position: absolute;
+      top: 10%;
+      left: 55%;
+      span {
+        @extend %hero-text-h2;
+        color: $primary-alt-color;
+        // Since the gradient is off for mobile devices, add a text shadow
+        @media #{$small-only} {
+          color: $white;
+          text-shadow: 0 0 rem-calc(10px) rgba(0, 0, 0, 0.7);
+          left:inherit;
+          right:5%;
+          top:8%;
+
+        }
+      }
+    }
+    .views-field-body {
+      // On large devices, just display the in the hero image
+      @media #{$xlarge-up} {
+      position: absolute;
+      top: 20%;
+      left: 55%;
+      width: 40%;
+      text-align: left;
+      padding: 0;
+    }
+        @extend %rhythm-space;
+        @extend %horizontal-spacer;
+        position: relative;
+        text-align: left;
+        width: auto;
+        top: inherit;
+        left: inherit;
+  }
+}
+  // Wrap absolutely positioned elements in a relative div
+  .pane-goals-goal-products-pane {
+    .pane-content {
+      position: relative;
+    }
+  }
+  // Position the products as small links at the bottom-right corner of the hero
+  .goal-products {
+    position: absolute;
+    right: 0;
+    bottom: rem-calc(20px);
+    // For mobile devices, remove the absolute positioning and just place below the goal text
+    @media #{$small-only} {
+      position: relative;
+      right: inherit;
+      bottom: inherit;
+      .view-content {
+        text-align: center;
+      }
+    }
+    .views-row {
+      float: left;
+      margin-right: rem-calc(20px);
+      // Remove the float so that products can be centered
+      @media #{$small-only} {
+        float: none;
+      }
+    }
+    .views-field-title {
+      display: inline-block;
+      a {
+        @extend %header-text;
+        border-bottom: rem-calc(2px) solid $primary-alt-color;
+        &:hover {
+          color: $secondary-color;
+          border-color: $secondary-color;
+        }
+      }
+    }
+    // Make sure the icon floats to the left of the product name
+    .views-field-field-ins-icon {
+      display: inline-block;
+    }
+  }
+  .goal-articles {
+    // Give some breathing room to the article
+    .goal-article {
+      margin-top: rem-calc(50px);
+      float: left;
+      width: 100%;
+    }
+    // Set a margin near the size of the icon, to prevent overlap
+    .goal-article-right {
+      margin-left: rem-calc(250px);
+      // Center the article title/text below the icon
+      @media #{$small-only} {
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+    // Float the article icons to the left/right of articles depending on the row order
+    .views-field-field-article-icon {
+      float: left;
+      // Make sure the image is horizontally centered
+      @media #{$small-only} {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .views-row-even {
+      .views-field-field-article-icon {
+        float: right;
+        // Remove the even/odd styles on mobile
+        @media #{$small-only} {
+          float: left;
+        }
+      }
+      .goal-article-right {
+        margin-left: 0;
+        margin-right: rem-calc(250px);
+        text-align: right;
+        // Remove the even/odd styles on mobile
+        @media #{$small-only} {
+          float: none;
+          margin-right: 0;
+          text-align: center;
+        }
+      }
+    }
+    .views-field-title {
+      @extend %hero-text-h2;
+      a {
+        color: $primary-alt-color;
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+/* Styles for the user page */
+
+#user-page {
+  margin-top: rem-calc(50px);
+  margin-bottom: rem-calc(50px);
+  .row {
+    text-align: center;
+  }
+  .panel-separator {
+    @extend %rhythm-space;
+  }
+  .views-field-picture {
+    // Create circle crop around user profile images
+    img {
+      @extend %rhythm-space;
+      border: rem-calc(1px) solid $charcoal;
+      border-radius: 50%;
+    }
+  }
+  .views-field-field-user-first {
+    @extend %header-text;
+  }
+  .views-field-login {
+    font-style: italic;
+    font-size: rem-calc(12px);
+  }
+  .user-nav {
+    list-style: none;
+    background: $secondary-color;
+    border-radius: rem-calc(2px);
+    margin: 0;
+    li {
+      @extend %horizontal-spacer;
+      @extend %header-text;
+      position: relative;
+      margin: rem-calc(10px);
+      display: inline-block;
+      // Add an arrow below the current selected nav
+      &.user-nav-manage-policies {
+        &:after {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: rem-calc(20px) solid transparent;
+          border-right: rem-calc(20px) solid transparent;
+          border-top: rem-calc(20px) solid $secondary-color;
+          position: absolute;
+          margin-left: auto;
+          margin-right: auto;
+          left: 0;
+          right: 0;
+          top: 100%;
+        }
+        // Also copy the hover color
+        a {
+          color: $primary-alt-color;
+        }
+      }
+      a {
+        color: $white;
+        font-weight: normal;
+        &:hover {
+          color: $primary-alt-color;
+        }
+      }
+    }
+  }
+  .user-product {
+    @extend %rhythm-space;
+    padding: rem-calc(20px);
+    text-align: left;
+    border: rem-calc(1px) solid $seafoam;
+    .product-info {
+      .product-info-left {
+        float: left;
+        margin-right: rem-calc(20px);
+        @media #{$small-only} {
+          float: right;
+          margin-right: 0;
+        }
+        // Create a circular border around the icon
+        border-radius: 50%;
+        border: rem-calc(1px) solid $charcoal;
+        padding: rem-calc(15px);
+      }
+      .product-info-right {
+        display: inline-block;
+        // Format text
+        h2 {
+          @extend %header-text;
+        }
+        h6 {
+          color: $blue;
+          font-size: rem-calc(18px);
+        }
+        // On mobile devices, increase the width so we maintain a one-row style
+        @media #{$small-only} {
+          width: 100%;
+        }
+      }
+    }
+    .product-buttons {
+      width: 100%;
+      text-align: center;
+      .product-button {
+        @extend %rhythm-space;
+        margin-right: rem-calc(10px);
+        @media #{$small-only} {
+          width: 100%;
+          padding: rem-calc(10px);
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .button {
+    @extend %fin-button;
+  }
+  // Styles for the bundle ad
+  .bundle-ad {
+    border: rem-calc(1px) solid $seafoam;
+    .bundle-ad-content {
+      padding: rem-calc(50px);
+      @media #{$small-only} {
+        padding: rem-calc(10px);
+      }
+      .bundle-ad-title {
+        @extend %header-text;
+      }
+      .bundle-ad-products {
+        .bundle-ad-products-section {
+          display: inline-block;
+          text-align: left;
+          margin-right: rem-calc(50px);
+          @media #{$small-only} {
+            margin-right: 0;
+            display: block;
+            text-align: center;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          .bundle-ad-product {
+            @extend %rhythm-space;
+            // Float the icon next to the product
+            .webicon {
+              display: inline-block;
+              margin-right: rem-calc(5px);
+            }
+            h3 {
+              @extend %header-text;
+              display: inline-block;
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+    .bundle-ad-footer {
+      background: $light-green;
+      .bundle-ad-footer-text {
+        display: inline-block;
+        margin-right: rem-calc(100px);
+        text-align: left;
+        @media #{$small-only} {
+          margin-right: 0px;
+          text-align: center;
+        }
+        h1 {
+          display: inline-block;
+        }
+        h3 {
+          display: inline-block;
+        }
+      }
+      .bundle-ad-footer-button {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* Contest page styles */
+
+.contest-page {
+  // Some CSS overrides for the base demonstratie page theme
+  #page-title {
+    display:none;
+  }
+  // This is needed because we don't have a way to import panel-specific styles (yet)
+  .demonstratie-layout-content {
+    > .row:first-child {
+      max-width: none;
+      .columns.large-12 {
+        padding: 0;
+      }
+    }
+  }
+  // Now the normal styles for the content on this page
+  .contest-hero {
+    .contest-hero-image {
+      width: 100%;
+    }
+    h2 {
+      @extend %hero-text-h2;
+      position: absolute;
+      text-shadow: 0 0 rem-calc(10px) rgba(0, 0, 0, 0.7);
+      color: $white;
+      bottom: 30%;
+      left: 10%;
+      @media #{$small-only} {
+        bottom: 40%;
+        right: 10%;
+        left: inherit;
+      }
+    }
+    h1 {
+      @extend %hero-text-h1;
+      position: absolute;
+      text-shadow: 0 0 rem-calc(10px) rgba(0, 0, 0, 0.7);
+      color: $white;
+      bottom: 10%;
+      left: 10%;
+      @media #{$small-only} {
+        bottom: 0;
+        right: 5%;
+        left: inherit;
+      }
+    }
+    .contest-hero-trust-badge {
+      position: absolute;
+      top: 0;
+      right: 15%;
+      @media #{$small-only} {
+        display: none;
+      }
+    }
+  }
+  .contest-content {
+    max-width: rem-calc(1000px);
+    margin: rem-calc(25px) auto rem-calc(25px) auto;
+    h2 {
+      @extend %header-text;
+      @media #{$small-only} {
+        font-size: rem-calc(25px);
+      }
+    }
+    .contest-share-dropdown {
+      float: right;
+      .button {
+        @extend %fin-button;
+      }
+      @media #{$small-only} {
+        float: none;
+        .button {
+          width: 100%;
+        }
+      }
+      ul {
+        .contest-share-submit {
+          position: absolute;
+          padding: rem-calc(10px);
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          background: $secondary-color;
+          @extend %header-text;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+    }
+    .contest-image {
+      float: right;
+    }
+  }
+}
+
+/* Styles for map page */
+
+.location-map-page {
+  p,h1,h3 {
+    margin: 0;
+  }
+  .view-header {
+    a {
+      color: $terciary-color;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .node-title {
+    font-size: 20px;
+  }
+  .location-contact {
+    margin-bottom: rem-calc(10px);
+    img {
+      float: left;
+      margin-right: rem-calc(10px);
+    }
+  }
+}
+
+/* Styles for location view modes */
+
+.node-location.view-mode-featured {
+  .field-name-field-phone-number,.field-name-field-email-address {
+    @extend %horizontal-spacer;
+    display: inline-block;
+  }
+  .webicon {
+    vertical-align: middle;
+  }
+  .location-email-address,.location-phone-number {
+    display: inline-block;
+  }
+}
+
+/* Styles for articles */
+
+.article-page {
+  #page-title {
+    margin: 0;
+  }
+  .article-hero {
+    position: relative;
+    margin-bottom: rem-calc(15px);
+    .article-hero-title {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      h1 {
+        @extend %hero-text-h1;
+        color: $white;
+        text-shadow: 0 0 rem-calc(10px) rgba(0, 0, 0, 0.7);
+      }
+    }
+    .article-hero-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+//sticky nav 
+.fixed.product-nav-wrapper {
+	border-bottom:2px solid $border-color;
+}
+
+
+// Extend height of modal backgrounds
+
+.reveal-modal-bg {
+	position: fixed;
+	z-index: 998;
+}
+
+// Hide text format tips from the modal
+
+#modal-content .filter-guidelines {
+	display: none;
+}
+
+// Make sure body has correct positioning for navbar
+body {
+	position: inherit;
+}

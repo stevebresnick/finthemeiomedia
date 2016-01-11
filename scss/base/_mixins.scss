@@ -1,0 +1,88 @@
+// @file
+// Place your mixins here. Feel free to roll your own mixins.
+
+%rhythm-space {
+	margin-top:rem-calc(20px);
+	margin-bottom:rem-calc(20px);
+}
+
+%padding-rhythm-space {
+	padding-top:rem-calc(20px);
+	padding-bottom:rem-calc(20px);
+}
+
+%horizontal-spacer {
+	padding-left:rem-calc(10px);
+	padding-right:rem-calc(10px);
+}
+
+%header-text {
+  font-family: "lato",sans-serif;
+  text-transform: uppercase;
+  color: $primary-alt-color;
+}
+
+
+%hero-text-h2 {
+	font-family: "merriweather",sans-serif;
+	font-weight: bold;
+	margin-bottom: 0;
+	@media #{$large-up} {
+		font-size:rem-calc(35px);
+	}
+}
+
+%hero-text-h1 {
+	@media #{$large-up} {
+		font-size: rem-calc(71px);
+	}
+	font-weight: bold;
+	font-family: $font-family-sans-serif;
+	margin-top: 0;
+}
+
+
+%hero-img-gradient {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          @include background-image(linear-gradient(right, rgba(243, 239, 233, .7) 40%, rgba(243, 239, 233, 0.4) 45%, rgba(243, 239, 233, .1) 50%, rgba(243, 239, 233, 0) 100%));
+		  @media #{$small-only} {
+			  background-image: none;
+		  }
+		  opacity: 1;
+}
+
+// @todo make this generic across the site per the style guide
+%fin-button {
+	@extend %header-text;
+	background: $white;
+	border: rem-calc(1px) solid  $secondary-color;
+	border-radius: rem-calc(5px);
+	color:  $secondary-color;
+	&:hover {
+		background: $secondary-color;
+		color: $white;
+		&.dropdown {
+			&:after {
+				border-top-color: $white;
+			}
+		}
+	}
+	&.alert {
+		color: $white;
+		border: none;
+		background: $alert-color;
+		&:hover {
+			background: #d63c46;
+		}
+	}
+	&.dropdown{
+		&:after {
+			border-top-color: $secondary-color;
+		}
+	}
+}

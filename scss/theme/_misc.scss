@@ -1,0 +1,390 @@
+//svg icon support
+.webicon.small {
+	height:30px;
+	width:30px;
+}
+.webicon.large {
+	height:60px;
+	width:60px;
+}
+//set the NavBar module font in the tray so all the items fit horizontally at 1400px
+#navbar-administration .navbar-tray a {
+  font-size: rem-calc(13px);
+}
+#navbar-administration .navbar-tray-horizontal > .navbar-lining {
+  padding-right: 3em;
+}
+
+// Hide Navbar icons on mobile.
+@media #{$small-only} {
+  #navbar-administration .navbar-bar {
+    .navbar-tab#responsive-preview-navbar-tab, .navbar-tab.df-tools-color-icon-wrapper {
+      display: none;
+    }
+  }
+}
+
+//hide the pink background when a node is unpublished as it looks bad
+.node-unpublished {
+  background-color: $white;
+}
+
+//it looks weird to have the negative margin showing when in IPE module
+
+.panels-ipe-editing .help-form {
+	margin-top:rem-calc(0px)
+}
+
+// Moderate Mmenu styles.
+
+#moderate-mmenu {
+  width: rem-calc(250px);
+  background: $charcoal;
+  .mm-navbar {
+    display: none;
+  }
+  .button-group {
+    padding: 0 rem-calc(35px) 0 rem-calc(35px);
+    li {
+      .button {
+        margin-bottom: rem-calc(5px);
+        width: rem-calc(225px);
+        border-top: 1px solid;
+        border-color: rgba(255,255,255,0.5);
+        border-left-width: 0;
+      }
+      &:after {
+        border: 0;
+      }
+      &:first-child .button {
+        border: 0;
+      }
+    }
+  }
+  .workbench-info-block {
+    background: #e7e7e7;
+    list-style: none;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    margin: rem-calc(10px 15px 10px 10px);
+    border: 2px solid $primary-color;
+    font-size: rem-calc(14px);
+    color: #333;
+    line-height: rem-calc(25px);
+  }
+}
+
+@media (min-width: 550px) {
+  html.mm-opening .mm-slideout {
+    -webkit-transform: translate(250px, 0);
+    -moz-transform: translate(250px, 0);
+    -ms-transform: translate(250px, 0);
+    -o-transform: translate(250px, 0);
+    transform: translate(250px, 0);
+  }
+}
+
+/* Give the entire region the products are in some margin */
+
+.tertiary-supplements-region {
+  @extend %rhythm-space;
+}
+
+
+/* Generic style for Foundation dropdowns */
+
+.f-dropdown {
+  padding: rem-calc(20px) rem-calc(20px) rem-calc(30px) rem-calc(20px);
+  border-color: $secondary-color;
+  border-radius: rem-calc(5px);
+  li {
+    label,a {
+      @extend %header-text;
+      color: $secondary-color;
+      font-weight: normal;
+    }
+  }
+}
+
+/* Fix for topbar + magellan */
+
+[data-magellan-expedition].fixed {
+  z-index: 98 !important;
+}
+
+/* Styles for contest block */
+
+.contest-block {
+  padding: rem-calc(20px);
+  border-top: rem-calc(1px) solid $border-color;
+  text-align: center;
+  a {
+    color: $primary-color;
+    h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
+
+.move-right a.exit-off-canvas {
+  box-shadow:none;
+}
+
+.left-off-canvas-toggle {
+  text-align: left;
+  font-size: rem-calc(14px) !important;
+  padding-left: rem-calc(45px) !important;
+  position:absolute;
+  z-index: 4;
+  border-right: 1px solid $white;
+  border-top:1px solid $white;
+  border-bottom:1px solid $white;
+  top:10px;
+  box-shadow: #000 2px 2px 8px;
+  &:before {
+    content: url(../images/moderate.png);
+    position: absolute;
+    top: rem-calc(10px);
+    left: rem-calc(10px);
+  }
+  span {
+    font-size: rem-calc(12px);
+  }
+}
+
+.activestate {
+  font-style: italic;
+}
+
+//panelizer still outputs a empty <h1> when there is no title so remove its margin
+.node-type-insurance-product h1#page-title, .node-type-page h1#page-title {
+	margin:0;
+}
+
+//panelizer preview adjustments
+#panels-preview-form-widget-preview {
+  .hero {
+    .field-name-field-hero-headline-1{
+      font-size:rem-calc(17px);
+    }
+    .field-name-field-hero-headline-2 {
+      font-size:rem-calc(27px);
+    }
+  }
+}
+
+
+/** Sub-scenario Styles **/
+
+body.node-type-location {
+  #page-title {
+    display: none;
+  }
+}
+
+#location-node-page {
+  // Force this region to be full width, so that we can have a custom background.
+  > .row:nth-child(3) {
+    width: 100%;
+    max-width: initial;
+    background-color: $light-green;
+    > .columns {
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      max-width: 75rem;
+      padding: 0;
+    }
+  }
+  // Remove margin on empty region.
+  .tertiary-supplements-region {
+    margin: 0;
+  }
+  //
+  .primary-features-region {
+    background-color: $blue;
+    min-height: rem-calc(340px);
+    position: relative;
+  }
+  .tertiary-features-region {
+    max-width: rem-calc(320px);
+    background-color: white;
+    float: right;
+    margin-top: rem-calc(-140px);
+    border: rem-calc(3px) solid gray;
+    border-radius: rem-calc(10px);
+    padding: rem-calc(20px);
+    p {
+      margin: 0;
+    }
+  }
+  .secondary-features-region {
+    .panel-pane {
+      margin-bottom: rem-calc(50px);
+      position: relative;
+    }
+    margin-top: rem-calc(50px);
+    h1 {
+      text-transform: uppercase;
+      color: #224660;
+      letter-spacing: 2px;
+      &:after {
+        content: '';
+        display: block;
+        width: rem-calc(300px);
+        margin-top: rem-calc(20px);
+        margin-bottom: rem-calc(20px);
+        border-bottom: 5px solid lightgray;
+      }
+    }
+  }
+  .pane-node-title {
+    position: relative;
+    h1 {
+      a {color: $white;}
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .pane-content {
+      position: absolute;
+      top: rem-calc(80px);
+      left: 30%;
+    }
+  }
+  .pane-node-field-image {
+    position: relative;
+    .pane-content {
+      position: absolute;
+      top: rem-calc(50px);
+      left: 10%;
+    }
+  }
+  .pane-node-field-image {
+    img {
+      border: 1px solid transparent;
+      border-radius: 50%;
+    }
+  }
+  .location-node-phone,.location-node-mail a, .location-node-callback a {
+    font-family: lato, sans-serif;
+    color: #007eb7;
+    &:before {
+      margin-right: rem-calc(10px);
+      content: '';
+      float: left;
+      width: rem-calc(24px);
+      height: rem-calc(24px);
+      display: block;
+      background-image: url('../images/ss-phone.png');
+    }
+  }
+  .location-node-mail,.location-node-phone,.location-node-callback {
+    margin-bottom: rem-calc(10px);
+  }
+  .location-node-mail a::before {
+    background-image: url('../images/ss-email.png');
+  }
+  .location-node-callback a::before {
+    background-image: url('../images/ss-contact.png');
+  }
+  .location-node-address {
+    font-size: rem-calc(14px);
+    margin-bottom: rem-calc(30px);
+    .country {
+      display: none;
+    }
+  }
+  .location-node-quote a {
+    text-transform: uppercase;
+    font-family: lato, sans-serif;
+  }
+  .pane-latest-blog-post-panel-pane-1 {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: rem-calc(20px);
+      a {
+        color: $blue;
+      }
+    }
+    .pane-title {
+      @extend h1;
+    }
+  }
+  .field-name-field-areas-of-focus {
+    ul {
+      list-style: none;
+      li {
+        a {
+          color: $charcoal;
+          text-transform: uppercase;
+          font-family: lato, sans-serif;
+          font-weight: lighter;
+          font-size: rem-calc(17px);
+        }
+        &:before {
+          display: inline-block;
+          content: "-";
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+    }
+  }
+  .pane-agent-license-panel-pane-1 {
+    padding-top: rem-calc(50px);
+    padding-bottom: rem-calc(100px);
+    .pane-title {
+      display: none;
+    }
+    p {
+      text-transform: uppercase;
+      font-family: lato, sans-serif;
+      margin: 0;
+      color: #a1a4a3;
+    }
+  }
+}
+
+.section-blog.views-page {
+  #page-title {
+    font-size: 3rem;
+    border-bottom: 5px solid $blue;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  .view-id-blog {
+    .node-title {
+      font-size: 1.5rem;
+      margin-bottom: rem-calc(20px);
+      a {
+        color: $blue;
+      }
+    }
+  }
+}
+
+/* Global sub-scenario styles */
+
+.dfs-fin-agent {
+  .block-dfs-fin-user {
+    width: inherit;
+  }
+  .title-area {
+    .name {
+      display: inline-block;
+    }
+    &:before {
+      content: '';
+      width: 184px;
+      display: inline-block;
+      height: 41px;
+      background-image: url('../images/commonwealth.png');
+      vertical-align: bottom;
+    }
+  }
+}
+
+/* YouTube responsively support */
+.youtube-embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } 
+.youtube-embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%;}

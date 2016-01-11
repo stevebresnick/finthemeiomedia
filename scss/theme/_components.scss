@@ -1,0 +1,574 @@
+
+.help-dropdown-wrapper {
+	background:$seafoam;
+}
+.help-form {
+	background:$secondary-color;
+	padding:10px 0 10px 0;
+	margin-top:rem-calc(-40%);
+	@media #{$small-only} {
+		margin-top:rem-calc(0px);
+	  	margin-bottom: 0;
+	}
+	margin-bottom:rem-calc(50%);
+	@include border-top-radius(5px);
+	@include border-bottom-radius(5px);
+	h2 {
+		color:$white;
+		line-height: rem-calc(50px);
+		font-size:rem-calc(26px);
+		letter-spacing: 1px;
+		@media #{$small-only} {
+			font-size:rem-calc(20px);
+			text-align: center;
+		}
+	}
+	.button {
+		background:$secondary-color;
+		border:1px solid #fff;
+		margin:5px 0 0 0;
+		@include border-top-radius(5px);
+		@include border-bottom-radius(5px);
+		width:100%;
+		text-align: left;
+		text-transform: uppercase;
+		font-family: $font-header;
+	}
+}
+
+.front .pane-quotes-random-quote-pane {
+	padding-bottom:rem-calc(50px);
+	background-image:url(../images/stripe-bg.png);
+}
+
+.pane-product-listings-product-listing-nav-pane {
+	background-image:url(../images/stripe-bg.png);
+	background-repeat:repeat-x;
+	background-position: center bottom;
+	padding-bottom:rem-calc(50px);
+	margin-bottom:rem-calc(20px);
+
+
+}
+
+.pane-quotes-random-quote-pane {
+	position:relative;
+	@extend %rhythm-space;
+	.views-field-field-image {
+		img {
+			width:100%;
+		}
+		&:before {
+          @extend %hero-img-gradient;
+        }
+	}
+	.quote-text-large {
+		position:absolute;
+		top:10%;
+		right:5%;
+		width:35%;
+		padding-right:rem-calc(50px);
+		@media #{$small-only}, #{$medium-only} {
+			position:relative;
+			width:100%; 
+			right:0;
+			top:0;
+			@extend %horizontal-spacer;
+		}
+		&:before {
+			content:url('../images/open-quote.png');
+			position:absolute;
+			left:-50px;
+			@media #{$small-only} {
+				left: 0;
+			}
+		}
+		.quote-text {
+			font-size:rem-calc(19px);
+			margin-top:rem-calc(20px);
+			@media #{$small-only} {
+				font-size:rem-calc(16px);
+				text-align: right;
+				/* Make room for the open quote */
+				padding-left: rem-calc(40px);
+			}
+		}
+		.quote-author, .views-field-path {
+			text-align:right;
+		}
+
+		.views-field-path {
+			margin-top:rem-calc(20px);
+			@media #{$small-only} {
+				font-size:rem-calc(14px); 
+			}
+			.button {
+				background:$button-alt-color;
+				@media #{$small-only} {
+					@include button($button-tny);
+					background:$button-alt-color;
+					border:none;
+					text-shadow:none;
+				}
+
+				&:hover {
+					background:$alert-button-bg-hover;
+				}
+			}
+		}
+	}
+}
+
+.block-dfs-fin-newsletter{
+	margin-top:rem-calc(5px);
+	#edit-left {
+		@extend %rhythm-space;
+		@media #{$small-only} {
+			margin-bottom: 0;
+		}
+		&:before {
+			content:url('../images/mail-icon.png');
+			float:left;
+			margin-right:rem-calc(20px);
+			margin-top:rem-calc(10px);
+		}
+		.newsletter-header {
+			font-size: $h2-font-size;
+			color: $primary-alt-color;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-family: $font-header;
+			letter-spacing: 2px;
+			/* For small devices, use the foundation h2 sizing. */
+			@media #{$small-only} {
+				font-size: inherit;
+			}
+		}
+		.newsletter-subheader {
+			color:$primary-alt-color;
+		}
+	}
+
+	#edit-right {
+		@extend %rhythm-space;
+		.email-form-textbox {
+			height:rem-calc(45px);
+			width:60%;
+			margin-right:rem-calc(10px);
+			@extend %horizontal-spacer;
+			@media #{$small-only}, #{$medium-only} {
+				width: 100%;
+			}
+		}
+	}
+}
+
+// article list view
+
+.pane-recent-articles {
+	.pane-title {
+		padding-left:rem-calc(30px);
+		padding-right:rem-calc(30px);
+		@extend %rhythm-space;
+
+	}
+}
+
+.view-recent-articles {
+	li {
+		list-style:none;	
+		.views-field-title {
+			@extend %rhythm-space;
+		}
+	}
+}
+
+//search
+.block-search {
+	margin-top:10px;
+	margin-bottom:10px;
+	#search-block-form{
+		margin:0;
+		position:relative;
+
+
+		input[type="text"]{
+			margin:0;
+			background: #efefef;
+			color: $primary-color;
+			z-index: 102;
+			border: 1px solid $secondary-color;
+			position:relative;
+
+		}
+		button {
+			margin:0;
+		}
+
+		.ui-theme-basic-grey.ui-autocomplete-loading {
+			  background-image: url("../images/throbber.gif");
+			  background-position: 82% 7px;
+			  background-repeat: no-repeat;
+			  background-size:20px 20px;
+		}
+
+		.close-cancel {
+		    position: absolute;
+		    left: 10px;
+		    z-index: 101;
+		    top: 18px;
+		    color: $primary-color;
+		  }
+		  #ui-theme-basic-grey {
+		    z-index: 101 !important;
+		    background: $white;
+		    top: -16px !important;
+		    left: -95px !important;
+		    padding-top: 70px;
+		    min-width: 390px;
+		    .ui-autocomplete-field-group {
+		      float: left;
+		      left: 10px;
+		      color: #000;
+		      &:after {
+		        clear: both;
+		      }
+		    }
+		    .ui-autocomplete-field-title {
+		      color: #222;
+		      font-size: .9em;
+		    }
+		    .ui-autocomplete-field-term {
+		      color: $secondary-color;
+		    }
+		    .ui-menu-item {
+		      clear: none;
+		      width: 100%;
+		      padding-left: 30%;
+		      font-size: .9em;
+		   }
+		  }
+	    .form-submit {
+	    	  position: absolute;
+			  right: 20px;
+			  top: 9px;
+			  width: 20px;
+			  z-index: 104;
+	    }
+	}
+}
+
+/* Center Product callout text and position products next to eachother */
+.view-products-home-callout {
+  text-align: center;
+}
+
+.product-callout-row {
+  text-align: center;
+  display: inline-block;
+  margin-right: rem-calc(30px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  /* Remove margin on small screens */
+  @media #{$small-only} {
+    margin-right: 0;
+    @extend %rhythm-space;
+  }
+
+  .product-callout {
+    position:relative;
+
+    .plus-icon {
+      position:absolute;
+      top:50%;
+      right:rem-calc(-15px);
+      height:30px;
+      width:30px;
+      content:url('../images/plus-icon.png');
+      border-radius:50%;
+      background-color:$white;
+    }
+
+
+    /* Theme heading text */
+    .product-callout-heading {
+      @extend %header-text;
+    }
+
+    .product-callout-text {
+      font-size: rem-calc(13px);
+    }
+
+    /* Add the small border below the header text */
+    .views-field-field-callout-heading:after {
+      border-bottom: rem-calc(2px) solid $border-color;
+      display: block;
+      content: "";
+      margin: 0 25% 0 25%;
+    }
+
+    /* Add a margin to the outermost view wrapper */
+    .views-field-field-callout-text {
+      margin: rem-calc(10px) 0 rem-calc(5px) 0;
+    }
+
+    /* Theme the link to match IA styling */
+    .product-callout-link a {
+      @extend %header-text;
+      margin-top: rem-calc(10px);
+      color: $alert-color;
+    }
+
+    /* This is done in :after so we can optionally change the font size if needed */
+    .product-callout-link a:after {
+      content: ">";
+    }
+
+  }
+
+  /* Create circular border and center text within that border */
+  .product-callout.hover {
+    border-radius:50%;
+    border: rem-calc(2px) solid $border-color;
+    /* Make sure text doesn't overflow outside the circle */
+    text-align:center;
+    padding: rem-calc(30px);
+    /* Position "back" of icon on top of "front" of icon */
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* Add a bit of margin to the product title */
+  .views-field-title {
+    margin-top: rem-calc(10px);
+    width: rem-calc(225px);
+  }
+
+  .product-callout-title a {
+    @extend %header-text;
+  }
+
+  /* Hover flip styles */
+
+  .product-callout-flip {
+    margin: auto;
+    position: relative;
+    width: rem-calc(225px);
+    height: rem-calc(225px);
+  }
+
+  .product-callout {
+    width: 100%;
+    height: 100%;
+    @include transition(all .5s);
+    @include backface-visibility(hidden);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .product-callout.regular {
+    z-index: 2;
+    /* Hide the icon logo on mobile devices */
+    @media #{$small-only} {
+      display: none;
+    }
+  }
+
+  .product-callout.hover {
+    z-index: 1;
+    @include transform(rotateY(-180deg));
+    /* Do not rotate the backside if on mobile */
+    @media #{$small-only} {
+      @include transform(rotateY(0deg));
+    }
+  }
+
+  .product-callout-flip:hover .product-callout.regular {
+    z-index: 1;
+    @include transform(rotateY(180deg));
+  }
+
+  .product-callout-flip:hover .product-callout.hover {
+    z-index: 2;
+    @include transform(rotateY(0deg));
+  }
+}
+
+/* Styles for Product list */
+
+/* Slideshow styles */
+
+/* Make the slideshow fullwidth and mobile compatible */
+.product-slideshow {
+  .views_slideshow_cycle_main {
+    width: 100%;
+    float: left;
+    .views-slideshow-cycle-main-frame {
+      width: 100% !important; // Important is needed because views_slideshow adds inline styles
+      height: auto;
+    }
+    .views-slideshow-cycle-main-frame-row {
+      width: 100% !important; // Important is needed because views_slideshow adds inline styles
+      height: auto;
+    }
+    .field-content {
+      max-width: 100%;
+      width: 100%;
+      img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  /* Align the buttons correctly */
+  .views_slideshow_controls_text_previous {
+    position: absolute;
+    top: rem-calc(250px);
+    z-index: 98;
+    left: 10%;
+    @media #{$small-only}, #{$medium-only} {
+      display:none;
+    }
+  }
+  .views_slideshow_controls_text_next {
+    position: absolute;
+    top: rem-calc(250px);
+    z-index: 98;
+    right: 10%;
+    @media #{$small-only}, #{$medium-only}  {
+      display:none;
+    }
+  }
+
+  /* Theme the slideshow pager icons */
+
+  .views-slideshow-controls-bottom {
+    position: relative;
+    // the slideshow is too small on mobile devices to have any useful controls
+    @media #{$small-only} {
+      display:none;
+    }
+  }
+
+  .widget_pager_bottom {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+    z-index: 20;
+    width: 500px;
+    .views_slideshow_pager_field_item {
+      &.active .views-content-counter {
+        background: $border-color;
+        @include transition(all, 0.2s, ease-in-out);
+      }
+      .views-content-counter {
+        width: rem-calc(15px);
+        height: rem-calc(15px);
+        border-radius: 50%;
+        background: $white;
+        text-indent: -9999em;
+        float: left;
+        cursor: pointer;
+        display: inline;
+        margin-left: rem-calc(5px);
+      }
+    }
+  }
+
+  /* Theme the slideshow text */
+
+  .product-hero-text {
+    position: absolute;
+    right: 20%;
+    top: 10%;
+    text-align: right;
+    span {
+      display: block;
+      color: $white;
+      text-shadow: 0 0 rem-calc(10px) rgba(0, 0, 0, 0.7);
+    }
+    .hero-first {
+      @extend %hero-text-h2;
+    }
+    .hero-second {
+      @extend %hero-text-h1;
+    }
+  }
+
+  .views-field-path {
+    /* Format button to flat underneath hero text */
+    .call-to-action {
+      background: $button-alt-color;
+      right: 20%;
+      top: 45%;
+      position: absolute;
+      // Reduce button size on mobile devices
+      @media #{$small-only} {
+        @include button($button-tny);
+        // Push the button to the bottom right corner to make room for the text
+        right: 5%;
+        top: 65%;
+      }
+    }
+  }
+}
+
+//janrain overrides 
+
+.janrainContent {
+  height:60px;
+}
+
+.janrain-header {
+  border-bottom:1px solid $primary-color;
+  margin-bottom:15px;
+}
+
+#user-login-wrapper {
+  #janrainAuthReturnExperience {
+    width:100%;
+    position:absolute;
+    left:15px;
+    text-align: left;
+
+    a {
+      border:none!important;
+    }
+    .janrain-provider-icon-24 {
+      vertical-align: baseline!important;
+    }
+    #janrain-twitter div span, #janrain-facebook div span {
+      margin-top:-9px!important;
+      .janrain-provider-text-color-twitter {
+      }
+    }
+  } 
+}
+
+#janrainAuthReturnExperience {
+    width:100%;
+    float:left;
+    text-align: left;
+    margin-bottom:30px;
+  a {
+    border:none!important;
+
+  }
+  .janrain-provider-icon-24 {
+      vertical-align: baseline!important;
+    }
+    #janrain-twitter div span, #janrain-facebook div span {
+      margin-top:0px!important;
+      .janrain-provider-text-color-twitter {
+      }
+    }
+}
