@@ -12,11 +12,13 @@ function fin_iomedia_stp_layout_panels_layouts() {
     //'admin css' => '../foundation_panels_admin.css',
     'regions' => array(
       'top' => t('Top'),
+      'next-game' => t('Next Game Block'),
       'secondary' => t('secondary'),
       'left' => t('First Block'),
       'center-left' => t('Second Block'),
       'center-right' => t('Third Block'),
       'right' => t('Fourth Block'),
+      'copyright' => t('Copyright Block'),
       'bottom' => t('Bottom'),
     ),
   );

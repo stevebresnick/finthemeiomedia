@@ -22,6 +22,13 @@
 				<?php print $content['top']; ?>
       </div>
   <?php endif; ?>
+  
+  <?php if ($content['next-game']): ?>
+      <div class="top-bayside top-region">
+				<?php print $content['next-game']; ?>
+      </div>
+  <?php endif; ?>
+  
   <?php if ($content['secondary']): ?>
     <div class="row">
       <div class="large-12 columns secondary-region">
@@ -32,20 +39,26 @@
 
   <div class="top-bayside top-region">
   <!--<div class="row">--->
-    <div class="large-3 columns left-region">
+    <div class="large-3 medium-6 columns left-region">
       <?php print $content['left']; ?>
     </div>
-        <div class="large-3 columns center-region">
+        <div class="large-3 medium-6 columns center-region">
       <?php print $content['center-left']; ?>
     </div>
-            <div class="large-3 columns center-region">
+            <div class="large-3 medium-6 columns center-region">
       <?php print $content['center-right']; ?>
     </div>
-    <div class="large-3 columns right-region">
+    <div class="large-3 medium-6 columns right-region">
       <?php print $content['right']; ?>
     </div>
   <!--</div>--->
   </div>
+  
+  <?php if ($content['copyright']): ?>
+      <div class="top-bayside top-region">
+				<?php print $content['copyright']; ?>
+      </div>
+  <?php endif; ?>
 
   <?php if ($content['bottom']): ?>
     <div class="bottom-wrapper">
